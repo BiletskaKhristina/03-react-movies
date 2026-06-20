@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './MovieModal.module.css';
 import type { Movie } from '../../types/movie';
-import { backdropUrl } from '../../services/movieService';
+import {backdropUrl}  from '../../services/movieService';
 
 export interface MovieModalProps {
   movie: Movie;
