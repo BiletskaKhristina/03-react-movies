@@ -1,5 +1,4 @@
 import axios from 'axios';
-import type { AxiosResponse } from 'axios';
 import type { Movie } from '../types/movie';
 
 const API = axios.create({
@@ -17,10 +16,13 @@ interface SearchMoviesResponse {
 }
 
 export async function fetchMovies(query: string): Promise<Movie[]> {
-  const res: AxiosResponse<SearchMoviesResponse> = await API.get('/search/movie', {
+  const { data } = await API.get<SearchMoviesResponse>('/search/movie',
+     {
     params: { query },
-  });
-  return res.data.results || [];
+  }
+);
+  return data.results ?? [];
+ 
 }
 
 export function posterUrl(path: string | null, size: 'w500' | 'original' = 'w500') {

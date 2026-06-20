@@ -17,7 +17,7 @@ export default function SearchBar({ onSubmit }: SearchBarProps) {
     }
     onSubmit(query);
   
-    formRef.current?.reset();
+
   }
 
   return (
@@ -25,7 +25,7 @@ export default function SearchBar({ onSubmit }: SearchBarProps) {
       <div className={styles.container}>
         <a
           className={styles.link}
-          href="[themoviedb.org](https://www.themoviedb.org/)"
+          href="https://www.themoviedb.org/"
           target="_blank"
           rel="noopener noreferrer"
         >
